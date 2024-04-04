@@ -25,10 +25,15 @@ STEP 8: Use heatmap method of representation to show relationships between two v
 CODING
 
 import numpy as np
+
 import pandas as pd
+
 import matplotlib.pyplot as plt
+
 import seaborn as sns
+
 dt=pd.read_csv("/content/titanic_dataset.csv")
+
 dt
 
 dt.info()
