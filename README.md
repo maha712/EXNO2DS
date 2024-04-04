@@ -41,6 +41,7 @@ dt.info()
 dt.shape
 
 dt.set_index("PassengerId",inplace=True)
+
 dt.describe()
 
 dt.nunique()
@@ -48,6 +49,7 @@ dt.nunique()
 dt["Survived"].value_counts()
 
 per=(dt["Survived"].value_counts()/dt.shape[0]*100).round(2)
+
 per
 
 
@@ -58,6 +60,7 @@ dt
 dt.Pclass.unique()
 
 dt.rename(columns={'Sex':'Gender'},inplace=True)
+
 dt
 
 sns.catplot(x="Gender",col="Survived",kind="count",data=dt,height=5,aspect=.7)
@@ -72,11 +75,13 @@ sns.jointplot(x="Age",y="Fare",data=dt)
 
 
 fig,ax1=plt.subplots(figsize=(8,5))
+
 pt=sns.boxplot(ax=ax1,x="Pclass",y="Age",hue="Gender",data=dt)
 
 sns.catplot(data=dt,col="Survived",x="Gender",hue="Pclass",kind="count")
 
 corr=dt.corr()
+
 sns.heatmap(corr,annot=True)
 
 sns.pairplot(dt)
